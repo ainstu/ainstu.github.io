@@ -1,0 +1,17 @@
+Runway Rush (秀场狂潮)
+Copyright (c) 2026 Xihan Zeng. All rights reserved.
+
+This game, its code, art, music arrangements and design are the property of Xihan Zeng.
+You may play it. You may not copy, modify, redistribute, re-host or sell the game or any part of it
+without written permission from the author.
+
+Third-party parts are used under their own licences, which still apply to them:
+- three.js r128 (MIT) - vendor/LICENSE-three.txt
+- Noto Sans SC, Bodoni Moda, IBM Plex Mono (SIL Open Font License 1.1) - fonts/LICENSE-*.txt
+- Sound effects from Kenney (CC0) and qubodup (CC0) - audio/sfx/LICENSE-*.txt
+- Hub music rendered with the GeneralUser GS SoundFont by S. Christian Collins (free for commercial use)
+- Level music made with ACE-Step 1.5 (MIT), an AI music model, from prompts and selections by the author
+
+本游戏（代码、美术、音乐编排与设计）版权归 Xihan Zeng 所有，保留所有权利。
+欢迎游玩；未经作者书面许可，不得复制、修改、转载、重新托管或出售本游戏或其任何部分。
+第三方素材遵循各自的许可协议（见上）。
