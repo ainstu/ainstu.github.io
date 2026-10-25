@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Runway Rush · 数据</title>
+<style>
+:root{--bg:#0B0A0E;--card:#141217;--ink:#EDE8DF;--muted:#8E8A93;--pink:#FF3D7F;--gold:#E2C27A}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,"Noto Sans SC",sans-serif;display:grid;place-items:center;min-height:100vh;padding:24px 16px;box-sizing:border-box}
+main{width:100%;max-width:420px}
+h1{font:italic 800 34px Georgia,serif;margin:0}h1 b{color:var(--pink)}
+p.sub{color:var(--muted);margin:4px 0 22px;letter-spacing:.2em;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.c{background:var(--card);border:1px solid #2a2730;padding:16px}
+.c span{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em}
+.c b{display:block;font:italic 800 34px Georgia,serif;margin-top:4px}
+.c.hi b{color:var(--gold)}
+.note{color:var(--muted);font-size:12px;margin-top:18px;line-height:1.7}
+</style></head><body><main>
+<h1>Runway <b>Rush</b></h1><p class="sub">朋友试玩数据 · ainstu.github.io</p>
+<div class="grid">
+  <div class="c"><span>访问次数</span><b id="v">…</b></div>
+  <div class="c"><span>玩家人数</span><b id="u">…</b></div>
+  <div class="c"><span>开局次数</span><b id="r">…</b></div>
+  <div class="c"><span>通关次数</span><b id="w">…</b></div>
+  <div class="c hi" style="grid-column:1/-1"><span>通关率</span><b id="p">…</b></div>
+</div>
+<p class="note">玩家人数按手机或浏览器计（换浏览器会多算一人）；数字从 2026-10-25 开始累计。你自己在这个网址玩也会算进去。这一页每打开一次，计数器会各加一，页面已自动扣掉。</p>
+</main>
+<script>
+/* each counter only answers when it is hit, so this page hits each once and takes its own hits back off (kept here) */
+const API='https://events.vercount.one/api/v2/log',SITE='https://ainstu.github.io/';
+let mine={};try{mine=JSON.parse(localStorage.getItem('runwayRush.statsReads')||'{}')}catch(e){}
+const hit=async path=>{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:SITE+path,isNewUv:false})});const j=await r.json();mine[path]=(mine[path]||0)+1;return j.data||{}};
+(async()=>{try{
+  const [root,run,clear]=await Promise.all([hit(''),hit('e/run'),hit('e/clear')]);
+  try{localStorage.setItem('runwayRush.statsReads',JSON.stringify(mine))}catch(e){}
+  const n=(d,k)=>Math.max(0,(d.page_pv||0)-(mine[k]||0)),v=n(root,''),rn=n(run,'e/run'),cl=n(clear,'e/clear');
+  document.getElementById('v').textContent=v;document.getElementById('u').textContent=root.site_uv||0;
+  document.getElementById('r').textContent=rn;document.getElementById('w').textContent=cl;
+  document.getElementById('p').textContent=rn?Math.round(cl/rn*100)+'%':'—';
+}catch(e){document.querySelector('.note').textContent='暂时连不上计数服务，稍后再刷新一次。'}})();
+</script></body></html>
