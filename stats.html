@@ -27,13 +27,15 @@ p.sub{color:var(--muted);margin:4px 0 22px;letter-spacing:.2em;font-size:12px}
 <script>
 /* each counter only answers when it is hit, so this page hits each once and takes its own hits back off (kept here) */
 const API='https://events.vercount.one/api/v2/log',SITE='https://ainstu.github.io/';
+/* hits from setting this page up (2026-10-25), taken off so the counts start at zero */
+const BASE={'':3,'e/run':2,'e/clear':2},BASE_UV=1;
 let mine={};try{mine=JSON.parse(localStorage.getItem('runwayRush.statsReads')||'{}')}catch(e){}
 const hit=async path=>{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:SITE+path,isNewUv:false})});const j=await r.json();mine[path]=(mine[path]||0)+1;return j.data||{}};
 (async()=>{try{
   const [root,run,clear]=await Promise.all([hit(''),hit('e/run'),hit('e/clear')]);
   try{localStorage.setItem('runwayRush.statsReads',JSON.stringify(mine))}catch(e){}
-  const n=(d,k)=>Math.max(0,(d.page_pv||0)-(mine[k]||0)),v=n(root,''),rn=n(run,'e/run'),cl=n(clear,'e/clear');
-  document.getElementById('v').textContent=v;document.getElementById('u').textContent=root.site_uv||0;
+  const n=(d,k)=>Math.max(0,(d.page_pv||0)-(mine[k]||0)-(BASE[k]||0)),v=n(root,''),rn=n(run,'e/run'),cl=n(clear,'e/clear');
+  document.getElementById('v').textContent=v;document.getElementById('u').textContent=Math.max(0,(root.site_uv||0)-BASE_UV);
   document.getElementById('r').textContent=rn;document.getElementById('w').textContent=cl;
   document.getElementById('p').textContent=rn?Math.round(cl/rn*100)+'%':'—';
 }catch(e){document.querySelector('.note').textContent='暂时连不上计数服务，稍后再刷新一次。'}})();
