@@ -107,13 +107,16 @@ body{font-family:var(--body);font-weight:400;padding-left:max(16px,env(safe-area
 .jc.r1 .fr{background:linear-gradient(115deg,#2a200d,#16120a 40%,#3a2c10 50%,#16120a 60%,#211a0c);background-size:240% 100%;animation:foil 2.6s linear infinite}
 .jc.r2 .fr{background:conic-gradient(from 0deg at 50% 45%,#2a1f3a,#14303a,#3a2a14,#2c1430,#14303a,#2a1f3a);box-shadow:0 0 30px rgba(191,233,255,.45)}
 .jc.r2.open .fr{animation:dia 1.2s ease-out}
-.draw:not(.gift) .jc.r0 .bk{background:repeating-linear-gradient(45deg,#24252c 0 6px,#1d1e24 6px 12px);border-color:rgba(201,204,214,.5);box-shadow:inset 0 0 0 4px #15161b,inset 0 0 0 5px rgba(201,204,214,.35)}
-.draw:not(.gift) .jc.r0 .bk::after{color:rgba(201,204,214,.75)}
-.draw:not(.gift) .jc.r1 .bk{background:linear-gradient(115deg,#3a2a0e,#1e160a 40%,#4a3712 50%,#1e160a 60%,#2c210c);background-size:240% 100%;animation:foil 2.6s linear infinite;border-color:rgba(232,195,106,.85)}
-.draw:not(.gift) .jc.r2 .bk{background:conic-gradient(from 0deg at 50% 45%,#3a2a5a,#1a4a5a,#5a4a1a,#4a1a4a,#1a4a5a,#3a2a5a);border-color:rgba(191,233,255,.9);box-shadow:0 0 22px rgba(191,233,255,.55),inset 0 0 0 4px rgba(10,10,20,.6)}
-.draw:not(.gift) .jc.r2 .bk::after{color:#E6F7FF}
+.draw:not(.gift) .jc.rX0 .bk{background:repeating-linear-gradient(45deg,#24252c 0 6px,#1d1e24 6px 12px);border-color:rgba(201,204,214,.5);box-shadow:inset 0 0 0 4px #15161b,inset 0 0 0 5px rgba(201,204,214,.35)}
+.draw:not(.gift) .jc.rX0 .bk::after{color:rgba(201,204,214,.75)}
+.draw:not(.gift) .jc.rX1 .bk{background:linear-gradient(115deg,#3a2a0e,#1e160a 40%,#4a3712 50%,#1e160a 60%,#2c210c);background-size:240% 100%;animation:foil 2.6s linear infinite;border-color:rgba(232,195,106,.85)}
+.draw:not(.gift) .jc.rX2 .bk{background:conic-gradient(from 0deg at 50% 45%,#3a2a5a,#1a4a5a,#5a4a1a,#4a1a4a,#1a4a5a,#3a2a5a);border-color:rgba(191,233,255,.9);box-shadow:0 0 22px rgba(191,233,255,.55),inset 0 0 0 4px rgba(10,10,20,.6)}
+.draw:not(.gift) .jc.rX2 .bk::after{color:#E6F7FF}
 .draw:not(.gift) .jc:not(.open){cursor:pointer}
 @keyframes dia{0%{filter:brightness(2.2)}100%{filter:none}}
+.jc.r1.open{animation:goldPop .7s cubic-bezier(.2,.8,.3,1)}.jc.r2.open,.jc.evo.open{animation:diaPop 1.1s cubic-bezier(.2,.8,.3,1)}
+@keyframes goldPop{0%{transform:scale(1);box-shadow:0 0 0 rgba(232,195,106,0)}35%{transform:scale(1.1);box-shadow:0 0 34px rgba(232,195,106,.85)}100%{transform:scale(1);box-shadow:0 0 12px rgba(232,195,106,.3)}}
+@keyframes diaPop{0%{transform:scale(1);box-shadow:0 0 0 rgba(191,233,255,0)}30%{transform:scale(1.16);box-shadow:0 0 60px rgba(191,233,255,1),0 0 120px rgba(255,143,183,.55)}100%{transform:scale(1);box-shadow:0 0 22px rgba(191,233,255,.45)}}
 .dhint{margin:-6px 0 0;font:500 12px var(--body);color:var(--muted);letter-spacing:.1em;display:flex;align-items:center;justify-content:center;gap:14px}
 .turnall{font:700 12px var(--body);letter-spacing:.16em;color:var(--ink);background:transparent;border:1px solid rgba(237,232,223,.4);padding:7px 14px;cursor:pointer}.turnall:hover{border-color:var(--pink)}
 @media (max-width:640px){.dcards{gap:6px}.jc .fr b{font-size:9.5px}.jc .fr i{font-size:8px}}
@@ -379,8 +382,9 @@ img.ic{width:clamp(62px,7vw,88px);height:clamp(62px,7vw,88px);margin:-8px 0 -6px
 #end.lose .endkick{color:var(--muted)}
 #endT{font-size:clamp(50px,13vw,86px)}
 #end.lose #endT small{color:var(--muted)}
-.card p.endstory{color:#C9C3CC;font-size:14px}
-.endstats{display:grid;grid-template-columns:repeat(4,1fr);width:100%;background:linear-gradient(160deg,#1c171f,#110f14);border:1px solid #302b35;outline:1px dashed rgba(237,232,223,.14);outline-offset:-6px;border-radius:3px}
+.card p.endstory{color:#A9A3AC;font-size:13px;margin:-6px 0 0}
+.card p.endstory:empty{display:none}
+.endstats{display:grid;grid-template-columns:repeat(3,1fr);width:100%;background:linear-gradient(160deg,#1c171f,#110f14);border:1px solid #302b35;outline:1px dashed rgba(237,232,223,.14);outline-offset:-6px;border-radius:3px}
 .endstats>div{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 4px 14px}
 .endstats>div+div{border-left:1px dashed rgba(237,232,223,.12)}
 .endstats b{font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(24px,6vw,32px);line-height:1;color:var(--ink)}
@@ -388,13 +392,15 @@ img.ic{width:clamp(62px,7vw,88px);height:clamp(62px,7vw,88px);margin:-8px 0 -6px
 .endlook{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
 .endlbl{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--muted)}
 .loadout{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px}
-.lo{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink)}
+.lo{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:0;color:var(--ink);position:relative}
+.lo.mvp .ic,.lo.mvp img.ic{outline:1.5px solid var(--gold);outline-offset:3px;border-radius:50%}
+.lo .dp{font-size:10px}
 .lo .ic,.lo img.ic{width:26px;height:26px;margin:0}
 .lo.evo{color:var(--gold)}
 .lo .pips{gap:3px}.lo .pips i{width:5px;height:5px}
 .lo .dp{font:600 10.5px var(--mono);letter-spacing:.04em;color:var(--muted)}.lo .dp.mvp{color:var(--gold)}
 .endreward{display:flex;flex-direction:column;align-items:center;gap:4px}
-.sequin{font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(40px,10vw,54px);line-height:1;color:var(--gold);text-shadow:0 0 28px rgba(226,194,122,.35)}
+.sequin{font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(56px,15vw,72px);line-height:1;color:var(--gold);text-shadow:0 0 28px rgba(226,194,122,.35)}
 .endtot{font-size:12px;letter-spacing:.14em;color:var(--muted)}
 .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px}
 .badges span{font-size:11px;font-weight:700;letter-spacing:.18em;padding:4px 10px 4px 12px;border:1px solid rgba(255,61,127,.6);color:#FF6FA5;background:rgba(255,61,127,.08)}
@@ -644,10 +650,10 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
   <div class="ov" id="end" hidden><div class="card endcard">
     <p class="endkick" id="endK"></p>
     <h2 id="endT"></h2><p id="endS" class="endstory"></p>
-    <div class="endstats"><div><b id="sT"></b><span data-en="Time">用时</span></div><div><b id="sK"></b><span data-en="Kills">击倒</span></div><div><b id="sC"></b><span data-en="Best combo">最高连击</span></div><div><b id="sL"></b><span data-en="Level">等级</span></div></div>
-    <div class="endlook"><span class="endlbl" data-en="THIS RUN'S LOOK">本局配装</span><div class="loadout" id="endB"></div></div>
-    <div class="endreward"><div class="sequin">+<b id="endEarn">0</b></div><span class="endtot" id="endTot"></span><div class="badges" id="endBadges"></div></div>
-    <div class="endpress" id="endPress"></div>
+    <div class="endreward"><div class="sequin">+<b id="endEarn">0</b></div><span class="endtot" id="endTot"></span></div>
+    <div class="endstats"><div><b id="sT"></b><span data-en="Time">用时</span></div><div><b id="sK"></b><span data-en="Kills">击倒</span></div><div><b id="sC"></b><span data-en="Best combo">最高连击</span></div><b id="sL" hidden></b></div>
+    <div class="loadout" id="endB"></div>
+    <div class="badges" id="endBadges"></div><div class="endpress" id="endPress" hidden></div>
     <div class="btns"><button class="btn ghost" id="hubBtn" data-en="Backstage">回后台</button><button class="btn" id="againBtn">再走一场</button></div>
   </div></div>
 </div>
