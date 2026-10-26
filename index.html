@@ -604,8 +604,8 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
       <div class="set"><span><b data-en="Hit sound">打击音效</b><span class="d" data-en="How landing a hit sounds; ▶ plays a sample">命中敌人时的声音，▶ 试听</span></span><span class="seg hitkit" role="group"><button data-k="crisp" data-en="Crisp">清脆</button><button data-k="sparkle" data-en="Sparkle">闪亮</button><button data-k="punch" data-en="Punch">有力</button><button data-k="classic" data-en="Classic">原版</button><button data-k="demo" aria-label="试听" data-en-label="Play a sample">▶</button></span></div>
       <div class="set"><span><b data-en="Level-up cards pop up">升级卡自动弹出</b><span class="d" data-en="Off: tap LEVEL UP (or press Enter) when you're ready to pick">关：准备好了再点「升级」（或按回车）挑选</span></span><button class="tog" data-o="lvAuto"></button></div>
       <div class="set"><span><b data-en="Screen shake">屏幕震动</b><span class="d" data-en="Shake when hit and on explosions">受击、爆炸时的画面抖动</span></span><button class="tog" id="optShake" data-o="shake"></button></div>
-      <div class="set"><span><b data-en="Show FPS">显示帧数</b><span class="d" data-en="The game runs at your screen's refresh rate, up to 120 Hz and beyond">游戏按屏幕刷新率运行，120Hz 屏幕就是 120 帧</span></span><button class="tog" data-o="fps"></button></div>
-      <div class="set rowbuzz" id="rowBuzz"><span><b data-en="Vibration">手机振动</b><span class="d" data-en="Buzz when hurt, levelling up, beating the Editor">受伤、升级、击倒主编时振动</span></span><button class="tog" id="optBuzz" data-o="buzz"></button></div>
+      <div class="set"><span><b data-en="Show FPS">显示帧数</b><span class="d" data-en="Runs at your screen's refresh rate: 120 fps on a 120 Hz screen">游戏按屏幕刷新率运行，120Hz 屏幕就是 120 帧</span></span><button class="tog" data-o="fps"></button></div>
+      <div class="set rowbuzz" id="rowBuzz"><span><b data-en="Vibration">手机振动</b><span class="d" data-en="Buzz on hits, level-ups and boss takedowns">受伤、升级、击倒 Boss 时振动</span></span><button class="tog" id="optBuzz" data-o="buzz"></button></div>
       <div class="set" id="rowFs"><span><b data-en="Full screen">全屏</b><span class="d" data-en="Hide the browser address bar">隐藏浏览器地址栏</span></span><button class="tog" id="optFs">进入</button></div>
       <div class="set"><span><b data-en="Tutorial">新手引导</b><span class="d" data-en="Teach moving and dashing again in level I">下次进第一关时再教一遍走位和冲刺</span></span><button class="tog" id="optTut">重看</button></div>
       <div class="set"><span><b data-en="Reset save">重置存档</b><span class="d" data-en="Erase sequins, unlocks and records; can't be undone">清空亮片、解锁和纪录，无法恢复</span></span><button class="tog warn" id="optReset" data-en="Reset">重置</button></div>
@@ -619,8 +619,8 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
     <p class="custsoon" data-en="Outfits and more · coming soon">服装等更多内容 · 敬请期待</p>
     <div class="btns"><button class="btn" id="custOk" data-en="Done">完成</button></div></div></div>
   <div class="ov story" id="story" hidden role="dialog" aria-modal="true"><div class="scard"><p class="sk" id="storyK"></p><h3 id="storyT"></h3><i class="srule"></i><p class="sp" id="storyP"></p><div class="sfoot"><span id="storyN"></span><button class="btn" id="storyGo" data-en="Continue">继续</button></div></div></div>
-  <div class="ov draw gift" id="gift" hidden role="dialog" aria-modal="true"><div class="dstage"><p class="dk" id="giftK"></p><h3 class="gt" data-en="Gift Box">品牌礼盒</h3><div class="dcards" id="giftCards"></div><div class="ghint dhint" id="giftHint"><span data-en="Tap a card to turn it">点击卡片翻开</span><button class="turnall" id="giftAll" data-en="Turn all">全部翻开</button></div><div class="btns"><button class="btn" id="giftOk" data-en="Keep">收下</button></div></div></div>
-  <div class="ov draw" id="draw" hidden role="dialog" aria-modal="true"><div class="dstage"><p class="dk" id="drawK"></p><div class="dcards" id="drawCards"></div><div class="dhint" id="drawHint"><span data-en="Tap a card to turn it">点击卡片翻开</span><button class="turnall" id="drawAll" data-en="Turn all">全部翻开</button></div><div class="btns"><button class="btn" id="drawOk" data-en="Keep">收下</button></div></div></div>
+  <div class="ov draw gift" id="gift" hidden role="dialog" aria-modal="true"><div class="dstage"><p class="dk" id="giftK"></p><h3 class="gt" data-en="Gift Box">品牌礼盒</h3><div class="dcards" id="giftCards"></div><div class="ghint dhint" id="giftHint"><span data-en="Tap a card to flip it">点击卡片翻开</span><button class="turnall" id="giftAll" data-en="Flip all">全部翻开</button></div><div class="btns"><button class="btn" id="giftOk" data-en="Keep">收下</button></div></div></div>
+  <div class="ov draw" id="draw" hidden role="dialog" aria-modal="true"><div class="dstage"><p class="dk" id="drawK"></p><div class="dcards" id="drawCards"></div><div class="dhint" id="drawHint"><span data-en="Tap a card to flip it">点击卡片翻开</span><button class="turnall" id="drawAll" data-en="Flip all">全部翻开</button></div><div class="btns"><button class="btn" id="drawOk" data-en="Keep">收下</button></div></div></div>
   <div class="ov" id="lvl" hidden><div class="card">
     <h2 class="lvh" style="font-size:clamp(28px,5vw,56px)">Level <span id="lvN"></span><small><span class="pk" data-en="Pick one">选一个</span><span class="lvleft" id="lvLeft"></span></small></h2>
     <p class="lvkb kb" data-en="Keys 1 / 2 / 3 · Esc for later">按 1 / 2 / 3 选择 · Esc 稍后再选</p>
@@ -628,7 +628,7 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
     <div class="ups" id="ups"></div>
     <div class="lvbtns"><button class="btn ghost" id="rerollBtn" data-en="Reroll">重抽</button><button class="btn ghost" id="banBtn" data-en="Banish">撤下</button><button class="btn ghost" id="lvLater" data-en="Later">稍后再选</button></div>
   </div></div>
-  <div class="ov" id="stats" hidden><div class="card statcard"><h2>Stats<small data-en="Your bonuses now">当前加成</small></h2><div class="statgrid" id="statGrid"></div><div class="btns"><button class="btn" id="statOk" data-en="Back to the show">继续</button></div></div></div>
+  <div class="ov" id="stats" hidden><div class="card statcard"><h2>Stats<small data-en="Your stats">当前加成</small></h2><div class="statgrid" id="statGrid"></div><div class="btns"><button class="btn" id="statOk" data-en="Back to the show">继续</button></div></div></div>
   <div class="ov" id="pause" hidden><div class="card"><h2>Pause<small data-en="Paused">暂停</small></h2>
     <div class="sets pa">
       <div class="set"><span><b data-en="Music">音乐</b></span><span class="ctl"><input type="range" data-a="mus" min="0" max="100" step="5" aria-label="音乐音量" data-en-label="Music volume"><button class="tog" data-t="musOn" aria-label="音乐开关" data-en-label="Music on/off"></button></span></div>
@@ -644,7 +644,7 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
   <div class="ov" id="end" hidden><div class="card endcard">
     <p class="endkick" id="endK"></p>
     <h2 id="endT"></h2><p id="endS" class="endstory"></p>
-    <div class="endstats"><div><b id="sT"></b><span data-en="Time">用时</span></div><div><b id="sK"></b><span data-en="Kills">击倒</span></div><div><b id="sC"></b><span data-en="Best combo">最高连杀</span></div><div><b id="sL"></b><span data-en="Level">等级</span></div></div>
+    <div class="endstats"><div><b id="sT"></b><span data-en="Time">用时</span></div><div><b id="sK"></b><span data-en="Kills">击倒</span></div><div><b id="sC"></b><span data-en="Best combo">最高连击</span></div><div><b id="sL"></b><span data-en="Level">等级</span></div></div>
     <div class="endlook"><span class="endlbl" data-en="THIS RUN'S LOOK">本局配装</span><div class="loadout" id="endB"></div></div>
     <div class="endreward"><div class="sequin">+<b id="endEarn">0</b></div><span class="endtot" id="endTot"></span><div class="badges" id="endBadges"></div></div>
     <div class="endpress" id="endPress"></div>
