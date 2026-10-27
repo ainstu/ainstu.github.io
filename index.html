@@ -263,6 +263,9 @@ img.ic{width:clamp(62px,7vw,88px);height:clamp(62px,7vw,88px);margin:-8px 0 -6px
 .up .pips i.on{background:var(--gold);border-color:var(--gold)}.up .pips i.nx{background:var(--pink);border-color:var(--pink);box-shadow:0 0 8px rgba(255,61,127,.8);animation:pipUp 1.2s ease-in-out infinite}
 .up.cou .pips i.nx{background:var(--gold);border-color:#FFF0C2;box-shadow:0 0 8px rgba(255,231,160,.9)}
 @keyframes pipUp{50%{opacity:.55}}@media (prefers-reduced-motion:reduce){.up .pips i.nx{animation:none}}
+.skipbtn{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:6;padding:9px 16px;font:700 13px "Noto Sans SC",sans-serif;letter-spacing:.12em;color:#F4EFE6;background:rgba(14,12,18,.78);border:1px solid rgba(237,232,223,.5);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.skipbtn:active{background:rgba(237,232,223,.16)}
+.skipbtn.over{bottom:max(60px,calc(env(safe-area-inset-bottom,0px) + 48px))}.skipbtn[hidden]{display:none!important}
 .dashbtn{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:max(calc(30% - 48px),env(safe-area-inset-bottom,0px));width:96px;height:96px;border-radius:50%;border:0;padding:0;color:var(--ink);font:900 16px var(--body);letter-spacing:.2em;text-indent:.2em;display:none;
   background:radial-gradient(circle at 50% 38%,rgba(40,32,42,.62),rgba(12,10,15,.55) 70%);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:inset 0 0 0 7px rgba(9,9,11,.28),inset 0 0 0 8px rgba(237,232,223,.1),0 10px 26px rgba(0,0,0,.35)}
 .dashbtn::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--ink) calc((1 - var(--cd,0))*360deg),rgba(237,232,223,.22) 0);
@@ -593,9 +596,10 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
   <button class="statbtn" id="statBtn" hidden aria-label="当前加成" data-en-label="Your stats"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></button>
   <button class="lvbtn" id="lvBtn" hidden aria-label="升级" data-en-label="Level up"><b data-en="LEVEL UP">升级</b><i id="lvBtnN" hidden></i><span class="kb">ENTER</span></button>
   <button class="posebtn" id="poseBtn" aria-label="定格大片" data-en-label="Strike a pose"><span data-en="POSE">定格</span></button>
+  <button class="skipbtn" id="skipBtn" hidden data-en="SKIP ›">跳过 ›</button>
   <button class="dashbtn" id="dashBtn" aria-label="冲刺" data-en-label="Dash" data-en="DASH">冲刺</button>
   <button class="pausebtn" id="pauseBtn" aria-label="暂停" data-en-label="Pause" hidden>II</button>
-  <div class="tut" id="tut" role="status" aria-live="polite" hidden><span class="tutn" id="tutN"></span><p id="tutT"></p><button class="tutskip" id="tutSkip" data-en="Skip tutorial">跳过引导</button></div>
+  <div class="tut" id="tut" role="status" aria-live="polite" hidden><span class="tutn" id="tutN"></span><p id="tutT"></p></div>
   <div class="splash" id="splash" role="button" tabindex="0" aria-label="点击开始 / Tap to start">
     <div class="sp-in"><p class="sp-kick">FASHION WEEK · SAISON 01</p><h1 class="sp-logo">Runway <b>Rush</b></h1><i class="sp-line"></i>
       <p class="sp-cn" data-en="">秀场狂潮</p><p class="sp-tag" data-en="A survivor game on the runway"></p></div>
