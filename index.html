@@ -134,6 +134,8 @@ body:has(#tabSet:not([hidden])) #press.athub{visibility:hidden}
 body:has(#lvl:not([hidden])) #press,body:has(#pause:not([hidden])) #press,body:has(#gift:not([hidden])) #press,body:has(#draw:not([hidden])) #press,body:has(#end:not([hidden])) #press,body:has(#stats:not([hidden])) #press{visibility:hidden}
 #press.in{animation:pressIn 3s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes pressIn{0%{opacity:0;transform:translate(-50%,-14px)}10%,82%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-8px)}}
+.endlog table{margin:4px auto 0;border-collapse:collapse;font:600 11px/1.5 var(--mono);color:var(--muted,#9A93A0)}
+.endlog th{font-weight:700;opacity:.7;padding:0 8px}.endlog td{padding:0 8px;text-align:right}.endlog td:first-child{text-align:left}.endlog .hot{color:#FF5C7A}
 .endpress{display:flex;flex-direction:column;align-items:center;gap:8px}
 .endpress>div{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .endpress .pc{display:flex;align-items:baseline;gap:8px;padding:6px 12px;background:linear-gradient(180deg,#F4EFE6,#E6DFD2);color:#1A161C;border-radius:2px}
@@ -414,6 +416,7 @@ img.ic{width:clamp(62px,7vw,88px);height:clamp(62px,7vw,88px);margin:-8px 0 -6px
 .pausebtn{position:absolute;top:10px;right:max(10px,env(safe-area-inset-right,0px));width:40px;height:40px;border:1px solid #34323a;background:rgba(9,9,11,.55);color:var(--ink);font:900 13px var(--mono);cursor:pointer}
 .pausebtn:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
 .sets{display:flex;flex-direction:column;width:100%;border-top:1px solid #2c2a31}
+#tabSet{padding-bottom:64px}
 .set{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #2c2a31;text-align:left}
 .set b{font-size:14px;font-weight:700;display:block}
 .set span.d{font-size:12px;color:var(--muted)}
@@ -655,7 +658,7 @@ input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:2px
     <div class="endreward"><div class="sequin">+<b id="endEarn">0</b></div><span class="endtot" id="endTot"></span></div>
     <div class="endstats"><div><b id="sT"></b><span data-en="Time">用时</span></div><div><b id="sK"></b><span data-en="Kills">击倒</span></div><div><b id="sC"></b><span data-en="Best combo">最高连击</span></div><b id="sL" hidden></b></div>
     <div class="loadout" id="endB"></div>
-    <div class="badges" id="endBadges"></div><div class="endpress" id="endPress" hidden></div>
+    <div class="badges" id="endBadges"></div><div class="endpress" id="endPress" hidden></div><div class="endlog" id="endLog" hidden></div>
     <div class="btns"><button class="btn ghost" id="hubBtn" data-en="Backstage">回后台</button><button class="btn" id="againBtn">再走一场</button></div>
   </div></div>
 </div>
